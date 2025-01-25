@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Formulaire Nombre</title>
-</head>
+<title>Formulaire Nombre</title>
 
 <body>
     <form method="get" action="">

@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(to right, rgb(85, 195, 95), rgb(22, 214, 121));
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: black;
+}
