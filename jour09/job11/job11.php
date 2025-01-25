@@ -7,28 +7,28 @@ $jour08 = new PDO(
 );
 
 //prepare et exécute la requête SQL
-$query = $jour08->prepare("SELECT * FROM salles ORDER BY capacite DESC;");
+$query = $jour08->prepare("SELECT AVG(capacite) AS capacite_moyenne FROM salles;");
 $query->execute();
 
 // Récupérer toutes les données
 $salles = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // Vérifier si des données existent
-if (count($etage) > 0) {
+if (count($salles) > 0) {
     echo '<table border="1">';
 
     // Afficher le <thead> avec les noms des colonnes
     echo '<thead><tr>';
-    foreach (array_keys($etage[0]) as $columnName) {
+    foreach (array_keys($salles[0]) as $columnName) {
         echo '<th>' . htmlspecialchars($columnName) . '</th>';
     }
     echo '</tr></thead>';
 
     // Afficher le <tbody> avec les données
     echo '<tbody>';
-    foreach ($etage as $etage) {
+    foreach ($salles as $salles) {
         echo '<tr>';
-        foreach ($etage as $value) {
+        foreach ($salles as $value) {
             echo '<td>' . htmlspecialchars($value) . '</td>';
         }
         echo '</tr>';
@@ -37,5 +37,5 @@ if (count($etage) > 0) {
 
     echo '</table>';
 } else {
-    echo 'Aucune donnée trouvée dans la table "etage".';
+    echo 'Aucune donnée trouvée dans la table "salles".';
 }
