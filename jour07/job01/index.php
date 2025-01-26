@@ -21,12 +21,13 @@ if (isset($_POST['reset'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Compteur de visites</title>
+    <title>Formulaire</title>
 </head>
 
 <body>
     <p>Nombre de visites : <?php echo $_SESSION['nbvisites']; ?></p>
     <form method="post">
+        <input type="text" name="nbvisites" value="<?php echo $_SESSION['nbvisites']; ?>">
         <button type="submit" name="add">Add</button>
         <button type="submit" name="reset">Reset</button>
     </form>
